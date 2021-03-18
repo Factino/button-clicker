@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 public class GameTimer extends Timer {
 
-    //Time is in milliseconds
     private int timeRemaining; //Time left on the timer
     private int initialTimeRemaining; //The initial amount of time the timer had
     private int delay; //Delay before timer begins
@@ -14,16 +13,18 @@ public class GameTimer extends Timer {
     public GameTimer(int score) {
         super();
 
-        //Instantiate timeRemaining, based on our score
+        //Instantiate timeRemaining based on our score
         //timeRemaining decreases as score increases
         if (score > 30) {
-            timeRemaining = 500;
+            timeRemaining = 50;
         } else if (score > 20) {
-            timeRemaining = 750;
+            timeRemaining = 75;
         } else if (score > 10) {
-            timeRemaining = 1000;
+            timeRemaining = 100;
+        } else if (score > 5) {
+            timeRemaining = 150;
         } else {
-            timeRemaining = 1500;
+            timeRemaining = 200;
         }
 
         initialTimeRemaining = timeRemaining;
