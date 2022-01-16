@@ -1,7 +1,6 @@
-package pkg223jfinal;
+//Stanley Shi
 
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class GameTimer extends Timer {
 
@@ -16,15 +15,15 @@ public class GameTimer extends Timer {
         //Instantiate timeRemaining based on our score
         //timeRemaining decreases as score increases
         if (score > 30) {
-            timeRemaining = 50;
+            timeRemaining = 500;
         } else if (score > 20) {
-            timeRemaining = 75;
+            timeRemaining = 750;
         } else if (score > 10) {
-            timeRemaining = 100;
+            timeRemaining = 1000;
         } else if (score > 5) {
-            timeRemaining = 150;
+            timeRemaining = 1500;
         } else {
-            timeRemaining = 200;
+            timeRemaining = 2000;
         }
 
         initialTimeRemaining = timeRemaining;

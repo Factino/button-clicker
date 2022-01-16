@@ -1,5 +1,4 @@
 //Stanley Shi
-package pkg223jfinal;
 
 public class Main {
 
