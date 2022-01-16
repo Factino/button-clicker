@@ -1,4 +1,4 @@
-package pkg223jfinal;
+//Stanley Shi
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ public class ButtonClicker extends JFrame implements ActionListener {
     private JButton easy, medium, hard, custom, exit;
     private JLabel menuLabel;
 
-    //JObjects for the Custom Difficulty screen
+    //JObjects for the Custom Game screen
     private JPanel customPanel, customCenterPanel;
     private JLabel customHeader, rowLabel, colLabel, errorLabel;
     private JTextField rowField, colField;
@@ -73,11 +73,11 @@ public class ButtonClicker extends JFrame implements ActionListener {
 
         menuPanel.add(menuCenterPanel, BorderLayout.CENTER);
 
-        //Custom Difficulty panel stuff
+        //Custom Game panel stuff
         customPanel = new JPanel(new BorderLayout());
 
         //North section
-        customHeader = new JLabel("Custom Difficulty Settings");
+        customHeader = new JLabel("Custom Game Settings");
         customHeader.setFont(new Font("Arial", Font.BOLD, 24));
         customHeader.setHorizontalAlignment(JLabel.CENTER);
         customPanel.add(customHeader, BorderLayout.NORTH);
@@ -85,11 +85,11 @@ public class ButtonClicker extends JFrame implements ActionListener {
         //Center section
         customCenterPanel = new JPanel(new GridLayout(3, 2, GAP, GAP));
 
-        rowLabel = new JLabel("How many rows?");
+        rowLabel = new JLabel("Rows:");
         rowLabel.setFont(new Font("Arial", Font.BOLD, 24));
         rowLabel.setHorizontalAlignment(JLabel.RIGHT);
 
-        colLabel = new JLabel("How many columns?");
+        colLabel = new JLabel("Columns:");
         colLabel.setFont(new Font("Arial", Font.BOLD, 24));
         colLabel.setHorizontalAlignment(JLabel.RIGHT);
 
@@ -162,13 +162,13 @@ public class ButtonClicker extends JFrame implements ActionListener {
             //Goes to the Game screen
             programLayout.show(getContentPane(), "Game");
         } else if (source == medium) {
-            //Creates a medium Game Panel 
+            //Creates a medium Game Panel
             gameScreen = new GamePanel("Medium", 4, 4);
             add(gameScreen.gamePanel, "Game");
             //Goes to the Game screen
             programLayout.show(getContentPane(), "Game");
         } else if (source == hard) {
-            //Creates a hard Game Panel 
+            //Creates a hard Game Panel
             gameScreen = new GamePanel("Hard", 5, 5);
             add(gameScreen.gamePanel, "Game");
             //Goes to the Game screen
@@ -177,7 +177,7 @@ public class ButtonClicker extends JFrame implements ActionListener {
             programLayout.show(getContentPane(), "Custom");
         } else if (source == exit) {
             super.dispose();
-        } //Custom Difficulty screen buttons
+        } //Custom Game screen buttons
         else if (source == back) {
             programLayout.show(getContentPane(), "Main Menu");
         } else if (source == start) {
@@ -266,7 +266,7 @@ public class ButtonClicker extends JFrame implements ActionListener {
             gamePanel.add(timerBar, BorderLayout.SOUTH);
         }
 
-        //Instantiates a new timer 
+        //Instantiates a new timer
         public void createTimer() {
             timer = new GameTimer(score);
             timerBar.setMaximum(timer.getInitialTimeRemaining()); //Updates the timerBar's maximum
